@@ -32,16 +32,16 @@ if __name__ == "__main__":
     import time
     start_time1 = time.time()
     solu_1 = Solution()
-    result = solu_1.twoSum([2, 4, 1, 0, 5], 2)
+    result = solu_1.twoSum([2, 4, 1, 0, 5], 1)
     end_time1 = time.time()
-    assert result == [0, 3]
+    # assert result == [0, 2]
     print(result)
     print('solution 1 spend times: %d' % (end_time1 - start_time1))
 
     start_time2 = time.time()
     solu_2 = Solution2()
-    result = solu_2.twoSum([2, 4, 1, 0, 5], 2)
+    result = solu_2.twoSum([2, 4, 1, 0, 5], 1)
     end_time2 = time.time()
-    assert result == [0, 3]
+    # assert result == [0, 2]
     print(result)
     print('solution 1 spend times: %d' % (end_time2 - start_time2))
