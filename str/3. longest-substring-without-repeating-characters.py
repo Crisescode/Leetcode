@@ -26,4 +26,5 @@ class Solution:
 if __name__ == '__main__':
     solu = Solution()
     reslut = solu.lengthOfLongestSubstring('abcabcbb')
+    assert reslut == 3
     print(reslut)
