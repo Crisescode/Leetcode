@@ -42,6 +42,6 @@ if __name__ == "__main__":
     solu_2 = Solution2()
     result = solu_2.twoSum([2, 4, 1, 0, 5], 2)
     end_time2 = time.time()
-    # assert result == [0, 3]
+    assert result == [0, 3]
     print(result)
     print('solution 1 spend times: %d' % (end_time2 - start_time2))
