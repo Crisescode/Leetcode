@@ -1,3 +1,6 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
 # Time:  O(n)
 # Space: O(1)
 # https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
