@@ -35,7 +35,8 @@ if __name__ == "__main__":
     head.next = ListNode(2)
     head = head.next
     head.next = ListNode(3)
-    print(head)
+    head = head.next
+    # print(head)
     print(curr)
 
     res = Solution().reverseList(curr)
