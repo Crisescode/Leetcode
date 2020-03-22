@@ -5,22 +5,23 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        # left_bracket = '({['
-        # right_bracket = ')}]'
-        #
-        # bracket_num = 0
-        # for single_char in s:
-        #     if single_char in left_bracket:
-        #         bracket_num += 1
-        #     elif single_char in right_bracket:
-        #         bracket_num -= 1
-        #     else:
-        #         pass
-        #
-        # if bracket_num != 0:
-        #     return False
-        #
-        # return True
+        bracket_dict = {
+            '(': ')',
+            '{': '}',
+            '[': ']'
+        }
+        data = []
+
+        for sc in s:
+            if sc in bracket_dict:
+                data.append(sc)
+                continue
+            if data and sc == bracket_dict[data[-1]]:
+                data.pop()
+            else:
+                return False
+
+        return True if not data else False
 
 
 if __name__ == "__main__":
