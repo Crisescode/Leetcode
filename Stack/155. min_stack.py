@@ -61,6 +61,7 @@ if __name__ == '__main__':
     obj.push(3)
     obj.push(-2)
     obj.push(0)
+    obj.push(-5)
     obj.pop()
     param_3 = obj.top()
     param_4 = obj.getMin()
