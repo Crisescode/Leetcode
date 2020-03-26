@@ -1,19 +1,28 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# https://leetcode-cn.com/problems/valid-parentheses/
-# Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-# An input string is valid if:
-# 1. Open brackets must be closed by the same type of brackets.
-# 2. Open brackets must be closed in the correct order.
-# Note that an empty string is also considered valid.
+# https://leetcode-cn.com/problems/min-stack/
+# Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+# push(x) -- Push element x onto stack.
+# pop() -- Removes the element on top of the stack.
+# top() -- Get the top element.
+# getMin() -- Retrieve the minimum element in the stack.
 
-# For example, Given Input = "()[{}]", output will be True. Given Input = "([})", Output will be False.
-#
+# for example:
+'''
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> Returns -3.
+minStack.pop();
+minStack.top();      --> Returns 0.
+minStack.getMin();   --> Returns -2.
+
+'''
 
 
 class MinStack(object):
-
     def __init__(self):
         """
         initialize your data structure here.
@@ -46,15 +55,15 @@ class MinStack(object):
         return min(self.stack)
 
 
-# Your MinStack object will be instantiated and called as such:
-obj = MinStack()
-obj.push(-1)
-obj.push(3)
-obj.push(-2)
-obj.push(0)
-obj.pop()
-param_3 = obj.top()
-param_4 = obj.getMin()
+if __name__ == '__main__':
+    obj = MinStack()
+    obj.push(-1)
+    obj.push(3)
+    obj.push(-2)
+    obj.push(0)
+    obj.pop()
+    param_3 = obj.top()
+    param_4 = obj.getMin()
 
-print(param_3)
-print(param_4)
+    print(param_3)
+    print(param_4)
