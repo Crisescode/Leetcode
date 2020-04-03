@@ -59,20 +59,48 @@ class Solution(object):
 
 
 class Solution2(object):
+    # Time: o(2mn)
+    # Space: o(1)
+
     @timer
     def gameOfLife(self, board):
         """
         :type board: List[List[int]]
         :rtype: None Do not return anything, modify board in-place instead.
         """
+        rows = len(board)
+        cols = len(board[0])
+
+        neighbors = [(-1, 1), (0, 1), (1, 1), (-1, 0), (1, 0), (-1, -1), (0, -1), (1, -1)]
+
+        for x in range(rows):
+            for y in range(cols):
+
+                live_nums = 0
+                for neighbor in neighbors:
+                    dx = (x + neighbor[0])
+                    dy = (y + neighbor[1])
+
+                    if (0 <= dx < rows) and (0 <= dy < cols) and abs(board[dx][dy]) == 1:
+                        live_nums += 1
+
+                if board[x][y] == 1 and (live_nums < 2 or live_nums > 3):
+                    board[x][y] = -1
+
+                if board[x][y] == 0 and live_nums == 3:
+                    board[x][y] = 2
+
+        for r in range(rows):
+            for c in range(cols):
+                if board[r][c] > 0:
+                    board[r][c] = 1
+                else:
+                    board[r][c] = 0
+
+        return board
 
 
 if __name__ == "__main__":
     board = [[0, 1, 0], [0, 0, 1], [1, 1, 1], [0, 0, 0]]
-    # rows = len(board)
-    # cols = len(board[0])
-    # # copy_board = [[board[row][col] for col in range(cols)] for row in range(rows)]
-    # copy_board2 = [[col for col in row] for row in board]
-    # # print(copy_board)
-    # print(copy_board2)
-    print(Solution().gameOfLife(board))
+    # print(Solution().gameOfLife(board))
+    print(Solution2().gameOfLife(board))
