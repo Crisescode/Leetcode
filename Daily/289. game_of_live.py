@@ -1,45 +1,70 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# https://leetcode-cn.com/problems/game-of-life/
+# According to the Wikipedia's article: "The Game of Life, also known simply as Life,
+# is a cellular automaton devised by the British mathematician John Horton Conway in 1970."
+# Given a board with m by n cells, each cell has an initial state live (1) or dead (0).
+# Each cell interacts with its eight neighbors (horizontal, vertical, diagonal) using the
+# following four rules (taken from the above Wikipedia article):
+# 1. Any live cell with fewer than two live neighbors dies, as if caused by under-population.
+# 2. Any live cell with two or three live neighbors lives on to the next generation.
+# 3. Any live cell with more than three live neighbors dies, as if by over-population..
+# 4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+# Write a function to compute the next state (after one update) of the board given its
+# current state. The next state is created by applying the above rules simultaneously to
+# every cell in the current state, where births and deaths occur simultaneously.
+#
+# Example:
+# Input: [[0, 1, 0], [0, 0, 1], [1, 1, 1], [0, 0, 0]]
+# output will be: [[0, 0, 0], [1, 0, 1], [0, 1, 1], [0, 1, 0]]
+#
+from utils.timer_decorater import timer
+
 
 class Solution(object):
+    # Time: o(mn)
+    # Space: o(mn)
+
+    @timer
     def gameOfLife(self, board):
         """
         :type board: List[List[int]]
         :rtype: None Do not return anything, modify board in-place instead.
         """
-
-        neighbors = [(1,0), (1,-1), (0,-1), (-1,-1), (-1,0), (-1,1), (0,1), (1,1)]
-
         rows = len(board)
         cols = len(board[0])
 
-        # 从原数组复制一份到 copy_board 中
-        copy_board = [[board[row][col] for col in range(cols)] for row in range(rows)]
+        neighbors = [(-1, 1), (0, 1), (1, 1), (-1, 0), (1, 0), (-1, -1), (0, -1), (1, -1)]
+        copy_board = [[col for col in row] for row in board]
 
-        # 遍历面板每一个格子里的细胞
-        for row in range(rows):
-            for col in range(cols):
+        for x in range(rows):
+            for y in range(cols):
 
-                # 对于每一个细胞统计其八个相邻位置里的活细胞数量
-                live_neighbors = 0
+                live_nums = 0
                 for neighbor in neighbors:
+                    dx = x + neighbor[0]
+                    dy = y + neighbor[1]
 
-                    r = (row + neighbor[0])
-                    c = (col + neighbor[1])
+                    if (0 <= dx < rows) and (0 <= dy < cols) and copy_board[dx][dy] == 1:
+                        live_nums += 1
 
-                    # 查看相邻的细胞是否是活细胞
-                    if (r < rows and r >= 0) and (c < cols and c >= 0) and (copy_board[r][c] == 1):
-                        live_neighbors += 1
+                if copy_board[x][y] == 1 and (live_nums < 2 or live_nums > 3):
+                    board[x][y] = 0
 
-                # 规则 1 或规则 3
-                if copy_board[row][col] == 1 and (live_neighbors < 2 or live_neighbors > 3):
-                    board[row][col] = 0
-                # 规则 4
-                if copy_board[row][col] == 0 and live_neighbors == 3:
-                    board[row][col] = 1
+                if copy_board[x][y] == 0 and live_nums == 3:
+                    board[x][y] = 1
 
         return board
+
+
+class Solution2(object):
+    @timer
+    def gameOfLife(self, board):
+        """
+        :type board: List[List[int]]
+        :rtype: None Do not return anything, modify board in-place instead.
+        """
 
 
 if __name__ == "__main__":
