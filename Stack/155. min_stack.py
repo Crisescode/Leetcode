@@ -66,5 +66,5 @@ if __name__ == '__main__':
     param_3 = obj.top()
     param_4 = obj.getMin()
 
-    print(param_3)
-    print(param_4)
+    print("top:", param_3)
+    print("min element:", param_4)
