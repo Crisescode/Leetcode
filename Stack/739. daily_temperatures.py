@@ -13,6 +13,9 @@ from utils.timer_decorater import timer
 
 
 class Solution(object):
+    # Time: o(n^2)
+    # Space: o(n)
+
     @timer
     def dailyTemperatures(self, T):
         """
@@ -31,15 +34,28 @@ class Solution(object):
 
 
 class Solution2(object):
+    # Time: o(n^2) 最坏情况
+    # Space: o(2n)
+
     @timer
     def dailyTemperatures(self, T):
         """
         :type T: List[int]
         :rtype: List[int]
         """
-        pass
+        length = len(T)
+        counts = [0] * length
+
+        stack = []
+
+        for idx, t in enumerate(T):
+            while stack and t > T[stack[-1]]:
+                counts[stack.pop()] = idx - stack[-1]
+            stack.append(idx)
+        return counts
 
 
 if __name__ == "__main__":
     T = [73, 74, 75, 71, 69, 72, 76, 73]
     print(Solution().dailyTemperatures(T))
+    print(Solution2().dailyTemperatures(T))
