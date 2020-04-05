@@ -36,7 +36,6 @@ class LFUCache:
 
     def __init__(self, capacity: int):
         self.capacity = capacity
-        self.hash = {}
 
     def get(self, key: int) -> int:
         pass
@@ -46,6 +45,5 @@ class LFUCache:
 
 
 if __name__ == "__main__":
-    luf = LFUCache(capacity=2)
-    luf.put(1, 1)
-    print(luf.get(1))
+    pass
+
