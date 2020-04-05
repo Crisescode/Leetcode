@@ -1,4 +1,5 @@
 # Leetcode Solutions with Python
+This project records its my ideas for solving leetcode with python, ongoing update ...
 
 ### [Daily](Daily)
 |  #  | Title | Solution | Difficulty | Date |
