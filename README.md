@@ -4,7 +4,7 @@
 ### [Array](Array)
 |  #  | Title | Solution | Difficulty |
 | --- | ----- | -------- |  ----- |
-|1| [Maximum Distance in Arrays](https://leetcode-cn.com/problems/two-sum/) | [Python](./Array/1.two_sum.py) | easy |
+|1| [Maximum Distance in Arrays](https://leetcode-cn.com/problems/two-sum/) | [Python](./Array/1.%20two_sum.py) | easy |
 
 ### [String](String)
 
