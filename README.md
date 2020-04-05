@@ -3,10 +3,10 @@
 
 ### [Array.](Array)
 
-## [String.](String)
+### [String.](String)
 
-## [LinkedList.](LinkedList)
+### [LinkedList.](LinkedList)
 
-## [Stack.](Stack)
+### [Stack.](Stack)
 
-## [Daily.](Daily)
+### [Daily.](Daily)
