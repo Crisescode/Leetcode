@@ -1,5 +1,11 @@
 # Leetcode Solutions with Python
 
+### [Daily](Daily)
+|  #  | Title | Solution | Difficulty | Date |
+| --- | ----- | -------- |  ----- |
+| 169 | [Majority Element](https://leetcode-cn.com/problems/majority-element/) | [Python](./Daily/169.%20majority_element.py) | Easy | Mar 20 |
+| 289 | [Game of Life](https://leetcode-cn.com/problems/game-of-life/) | [Python](./Daily/289.%20game_of_live.py) | Medium | Apr 2 |
+| 289 | [LFU Cache](https://leetcode-cn.com/problems/lfu-cache/) | [Python](./Daily/460.%20LFU_cache.py) | Hard | Apr 5 |
 
 ### [Array](Array)
 |  #  | Title | Solution | Difficulty |
@@ -25,10 +31,3 @@
 | 155 | [Min Stack](https://leetcode-cn.com/problems/min-stack/) | [Python](./Stack/155.%20min_stack.py) | Easy |
 | 20 | [Valid Parentheses](https://leetcode-cn.com/problems/valid-parentheses/) | [Python](./Stack/20.%20vaild_bracket.py) | Easy |
 | 739 | [Daily Temperatures](https://leetcode-cn.com/problems/daily-temperatures/) | [Python](./Stack/739.%20daily_temperatures.py) | Medium |
-
-### [Daily](Daily)
-|  #  | Title | Solution | Difficulty |
-| --- | ----- | -------- |  ----- |
-| 169 | [Majority Element](https://leetcode-cn.com/problems/majority-element/) | [Python](./Daily/169.%20majority_element.py) | Easy |
-| 289 | [Game of Life](https://leetcode-cn.com/problems/game-of-life/) | [Python](./Daily/289.%20game_of_live.py) | Medium |
-| 289 | [LFU Cache](https://leetcode-cn.com/problems/lfu-cache/) | [Python](./Daily/460.%20LFU_cache.py) | Hard |
