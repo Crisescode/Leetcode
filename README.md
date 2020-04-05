@@ -2,7 +2,7 @@
 
 ### [Daily](Daily)
 |  #  | Title | Solution | Difficulty | Date |
-| --- | ----- | -------- |  ----- |
+| --- | ----- | -------- |  ----- | ---- |
 | 169 | [Majority Element](https://leetcode-cn.com/problems/majority-element/) | [Python](./Daily/169.%20majority_element.py) | Easy | Mar 20 |
 | 289 | [Game of Life](https://leetcode-cn.com/problems/game-of-life/) | [Python](./Daily/289.%20game_of_live.py) | Medium | Apr 2 |
 | 289 | [LFU Cache](https://leetcode-cn.com/problems/lfu-cache/) | [Python](./Daily/460.%20LFU_cache.py) | Hard | Apr 5 |
