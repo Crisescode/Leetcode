@@ -16,9 +16,14 @@ s = "3[a2[c]]", return "accaccacc".
 s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
 
 '''
+from utils.timer_decorater import timer
 
 
 class Solution(object):
+    # Time: o(n)
+    # Space: o(n)
+
+    @timer
     def decodeString(self, s):
         """
         :type s: str
