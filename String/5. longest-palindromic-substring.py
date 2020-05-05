@@ -17,3 +17,30 @@ Example 2:
     Input: "cbbd"
     Output: "bb
 '''
+
+
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        max_len = 1
+        res = s[0]
+
+        for i in range(len(s) - 1):
+            for j in range(i+1, len(s)):
+                if j - i + 1 > max_len and self.__valid_palindromic_str(s, i, j):
+                    max_len = j - i + 1
+                    res = s[i:j + 1]
+        return res
+
+    def __valid_palindromic_str(self, s, left, right):
+        while left < right:
+            if s[left] != s[right]:
+                return False
+            left += 1
+            right -= 1
+
+        return True
+
+
+if __name__ == "__main__":
+    s = "abcscbmsadd"
+    print(Solution().longestPalindrome(s))
