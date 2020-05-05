@@ -17,9 +17,11 @@ Example 2:
     Input: "cbbd"
     Output: "bb
 '''
+from utils.timer_decorater import timer
 
 
 class Solution:
+    @timer
     def longestPalindrome(self, s: str) -> str:
         max_len = 1
         res = s[0]
