@@ -17,7 +17,8 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 ### [String](String)
 |  #  | Title | Solution | Difficulty |
 | --- | ----- | -------- |  ----- |
-| 1 | [Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | [Python](./String/3.%20longest-substring-without-repeating-characters.py) | Medium |
+| 3 | [Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | [Python](./String/3.%20longest-substring-without-repeating-characters.py) | Medium |
+| 5 | [Longest Palindromic Substring](https://leetcode-cn.com/problems/longest-palindromic-substring/) | [Python](./String/5.%20longest-palindromic-substring.py) | Medium |
 
 ### [LinkedList](LinkedList)
 |  #  | Title | Solution | Difficulty |
