@@ -20,6 +20,7 @@ Example 2:
 from utils.timer_decorater import timer
 
 
+# 暴力解法：找出长度大于等于2的字串，然后判断其是否为回文子串
 class Solution:
     @timer
     def longestPalindrome(self, s: str) -> str:
@@ -41,6 +42,10 @@ class Solution:
             right -= 1
 
         return True
+
+
+class Solution2:
+    pass
 
 
 if __name__ == "__main__":
