@@ -44,7 +44,7 @@ class Solution:
         return True
 
 
-# 中心扩散法：
+# 中心扩散法：依次遍历字符串中每个字符，然后记录其左右字符，
 class Solution2:
     @timer
     def longestPalindrome(self, s: str) -> str:
@@ -80,6 +80,6 @@ class Solution2:
 
 
 if __name__ == "__main__":
-    s = "abcscbmsadd"
+    s = "acmaaaamcb"
     print(Solution().longestPalindrome(s))
     print(Solution2().longestPalindrome(s))
