@@ -34,3 +34,7 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 | 20 | [Valid Parentheses](https://leetcode-cn.com/problems/valid-parentheses/) | [Python](./Stack/20.%20vaild_bracket.py) | Easy |
 | 739 | [Daily Temperatures](https://leetcode-cn.com/problems/daily-temperatures/) | [Python](./Stack/739.%20daily_temperatures.py) | Medium |
 | 394 | [Decode String](https://leetcode-cn.com/problems/decode-string/) | [Python](./Stack/394.%20decode_string.py) | Medium |
+
+### [Tree](Tree)
+|  #  | Title | Solution | Difficulty |
+| 617 | [Merge Two Binary Trees](https://leetcode-cn.com/problems/merge-two-binary-trees/) | [Python](./Tree/617.%20merge_two_binary_trees.py) | Easy |
