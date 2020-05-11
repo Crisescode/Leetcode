@@ -45,17 +45,31 @@ class Solution:
         root.left = self.mergeTrees(t1.left, t2.left)
         root.right = self.mergeTrees(t1.right, t2.right)
 
-        setattr(self, "_root", root)
+        return root
 
-        # return root
-
-    def preOrder(self):
-        if self._root == None:
+    def preOrder(self, root):
+        if root is None:
             return
 
-        print(self._root.val, end=' ')
-        self.preOrder(self._root.left)
-        self.preOrder(self._root.right)
+        print(root.val, end=' ')
+        print("\n")
+        self.preOrder(root.left)
+        self.preOrder(root.right)
+
+    def InOrder(self, root):
+        if root is None:
+            return
+        self.InOrder(root.left)
+        print(root.val, end=' ')
+        self.InOrder(root.right)
+
+    def BackOrder(self, root):
+        if root is None:
+            return
+        self.BackOrder(root.left)
+        self.BackOrder(root.right)
+        print("后序遍历：\n")
+        print(root.val, end=' ')
 
 
 if __name__ == "__main__":
@@ -73,6 +87,8 @@ if __name__ == "__main__":
     tree2.right.right = TreeNode(7)
     print(tree2.left.right.val)
 
-    Solution().mergeTrees(tree1, tree2)
-    Solution().preOrder()
+    newTree = Solution().mergeTrees(tree1, tree2)
+    Solution().preOrder(newTree)
+    Solution().InOrder(newTree)
+    Solution().BackOrder(newTree)
 
