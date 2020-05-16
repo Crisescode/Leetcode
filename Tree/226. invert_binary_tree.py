@@ -2,8 +2,21 @@
 # -*- coding: utf-8 -*-
 
 # https://leetcode-cn.com/problems/invert-binary-tree/
-# Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
-# push(x) -- Push element x onto stack.
-# pop() -- Removes the element on top of the stack.
-# top() -- Get the top element.
-# getMin() -- Retrieve the minimum element in the stack.
+# Invert a binary tree.
+
+"""
+Example:
+    Input:
+                 4
+               / \
+             2    7
+           / \   / \
+         1   3  6  9
+    Output:
+
+                 4
+               / \
+             7    2
+           / \   / \
+         9   6  3  1
+"""
