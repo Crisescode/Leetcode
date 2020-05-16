@@ -26,8 +26,10 @@ Example:
                       / \    \
                     5    4    7
 """
+from utils.timer_decorater import timer
 
 
+# Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):
         self.val = x
@@ -36,6 +38,7 @@ class TreeNode:
 
 
 class Solution:
+    @timer
     def mergeTrees(self, t1: TreeNode, t2: TreeNode) -> TreeNode:
         if t1 is None:
             return t2
