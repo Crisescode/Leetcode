@@ -31,6 +31,7 @@ class TreeNode:
         self.right = None
 
 
+# 递归
 class Solution:
     def invertTree(self, root: TreeNode) -> Optional[TreeNode]:
         if root is None:
@@ -48,6 +49,12 @@ class Solution:
         print(root.val, end=' ')
         self.preOrder(root.left)
         self.preOrder(root.right)
+
+
+# 迭代
+class Solution2:
+    def invertTree(self, root: TreeNode) -> Optional[TreeNode]:
+        pass
 
 
 if __name__ == "__main__":
