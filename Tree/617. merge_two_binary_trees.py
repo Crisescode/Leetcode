@@ -55,7 +55,6 @@ class Solution:
             return
 
         print(root.val, end=' ')
-        print("\n")
         self.preOrder(root.left)
         self.preOrder(root.right)
 
@@ -71,7 +70,6 @@ class Solution:
             return
         self.BackOrder(root.left)
         self.BackOrder(root.right)
-        print("后序遍历：\n")
         print(root.val, end=' ')
 
 
@@ -81,17 +79,19 @@ if __name__ == "__main__":
     tree1.right = TreeNode(2)
     tree1.left.left = TreeNode(5)
 
-    print(tree1.left.left.val)
-
     tree2 = TreeNode(2)
     tree2.left = TreeNode(1)
     tree2.right = TreeNode(3)
     tree2.left.right = TreeNode(4)
     tree2.right.right = TreeNode(7)
-    print(tree2.left.right.val)
 
     newTree = Solution().mergeTrees(tree1, tree2)
+    print("前序遍历：")
     Solution().preOrder(newTree)
+    print("\n")
+    print("中序遍历：")
     Solution().InOrder(newTree)
+    print("\n")
+    print("后序遍历：")
     Solution().BackOrder(newTree)
 
