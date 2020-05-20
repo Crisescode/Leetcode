@@ -3,9 +3,8 @@
 
 """
 选择排序：
-1. 比较相邻的两个元素，如果前一个比后一个大，进行交换；
-2. 对每一对相邻的元素进行step 1操作，第一轮完成，数组中的最后一个元素会是最大的元素；
-3. 对接下来的每一轮进行同样的操作，将最大的数冒泡到最后的位置，直到不需要再交换为止。
+它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，
+存放在序列的起始位置，所以称为：选择排序。
 
 时间复杂度： O(n^2)
 空间复杂度： O(1)
@@ -21,12 +20,20 @@ class Solution:
         if len(l) <= 1:
             return l
 
-        for index in range(len(l)):
-            min_index = index
+        # for index in range(len(l)):
+        #     min_index = index
+        #     for j in range(index + 1, len(l)):
+        #         if l[j] < l[min_index]:
+        #             min_index = j
+        #
+        #     l[index], l[min_index] = l[min_index], l[index]
+        for index in range(len(l) - 1):
+            max_index = index
             for j in range(index + 1, len(l)):
-                if l[j] < l[min_index]:
-                    min_index = j
-                    l[index], l[min_index] = l[min_index], l[index]
+                if l[j] > l[max_index]:
+                    max_index = j
+
+            l[index], l[max_index] = l[max_index], l[index]
 
         return l
 
