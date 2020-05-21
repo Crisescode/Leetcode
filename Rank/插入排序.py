@@ -20,20 +20,19 @@ class Solution:
         if len(l) <= 1:
             return l
 
-        # for index in range(len(l)):
-        #     min_index = index
-        #     for j in range(index + 1, len(l)):
-        #         if l[j] < l[min_index]:
-        #             min_index = j
-        #
-        #     l[index], l[min_index] = l[min_index], l[index]
-        for index in range(len(l) - 1):
-            max_index = index
-            for j in range(index + 1, len(l)):
-                if l[j] > l[max_index]:
-                    max_index = j
+        for index in range(1, len(l)):
+            if l[index] < l[index - 1]:
+                temp = l[index]
+                tmp_index = index
 
-            l[index], l[max_index] = l[max_index], l[index]
+                for j in range(index - 1, -1, -1):
+                    if l[j] > temp:
+                        l[j + 1] = l[j]
+                        tmp_index = j
+                    else:
+                        break
+
+                l[tmp_index] = temp
 
         return l
 
