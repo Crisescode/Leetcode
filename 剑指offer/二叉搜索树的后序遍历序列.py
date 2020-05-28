@@ -14,4 +14,29 @@
 class Solution:
     def VerifySquenceOfBST(self, sequence):
         # write code here
-        pass
+        if len(sequence) == 0:
+            return False
+
+        root = sequence[-1]
+        for index, value in enumerate(sequence):
+            if value > root:
+                break
+
+        for value in sequence[index: -1]:
+            if value < root:
+                return False
+
+        left = True
+        if index > 0:
+            left = self.VerifySquenceOfBST(sequence[:index])
+
+        right = True
+        if index < len(sequence) - 1:
+            right = self.VerifySquenceOfBST(sequence[index: -1])
+
+        return left and right
+
+
+if __name__ == "__main__":
+    is_binary_tree = [1, 3, 5, 9, 12, 10, 7]
+    print(Solution().VerifySquenceOfBST(is_binary_tree))
