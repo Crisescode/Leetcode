@@ -37,4 +37,5 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 
 ### [Tree](Tree)
 |  #  | Title | Solution | Difficulty |
+| --- | ----- | -------- |  ----- |
 | 617 | [Merge Two Binary Trees](https://leetcode-cn.com/problems/merge-two-binary-trees/) | [Python](./Tree/617.%20merge_two_binary_trees.py) | Easy |
