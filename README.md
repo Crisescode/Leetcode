@@ -27,6 +27,10 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 | 206 | [Reverse Linked List](https://leetcode-cn.com/problems/reverse-linked-list/) | [Python](./LinkedList/26.%20reverse_linked_list.py) | Easy |
 | 234 | [Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list/) | [Python](./LinkedList/234.%20palindrome_linked_list.py) | Easy |
 
+### [Sort](Sort)
+|  #  | Title | Solution | Difficulty |
+| --- | ----- | -------- |  ----- |
+
 ### [Stack](Stack)
 |  #  | Title | Solution | Difficulty |
 | --- | ----- | -------- |  ----- |
