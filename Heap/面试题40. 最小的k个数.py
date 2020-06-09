@@ -9,7 +9,7 @@
 # 限制：0 <= k <= len(arr) <=10000, 0 <= arr[i] <= 10000
 #
 
-from typing import  List
+from typing import List
 
 
 class Solution:
