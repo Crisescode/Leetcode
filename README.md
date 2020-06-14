@@ -50,3 +50,4 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 # 剑指offer Solutions with Python
 
 |  #  | Title | Solution | Difficulty |
+| - | [反转链表](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&&tqId=11168&rp=1&ru=/activity/oj&qru=/ta/coding-interviews/question-ranking) | -- | 中等 |
