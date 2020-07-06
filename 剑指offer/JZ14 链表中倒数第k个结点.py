@@ -41,7 +41,21 @@ class Solution:
 class Solution2:
     def FindKthToTail(self, head, k):
         # write code here
-        pass
+        if k < 0 or head is None:
+            return
+
+        slow, fast = head, head
+        count = 0
+        while fast.next is not None:
+            fast = fast.next
+            if count >= k - 1:
+                slow = slow.next
+            count += 1
+
+        if count >= k - 1:
+            return slow.val
+
+        return None
 
 
 if __name__ == "__main__":
