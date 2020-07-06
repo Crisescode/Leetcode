@@ -7,8 +7,6 @@
 题目描述：
 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
 
-时间复杂度： O(n)
-空间复杂度： O(n)
 """
 
 
@@ -42,6 +40,37 @@ class Solution:
             node = node.next
 
 
+class Solution2:
+    # 返回合并后列表
+    def Merge(self, pHead1, pHead2):
+        # write code here
+        if pHead1 is None:
+            return pHead2
+        if pHead2 is None:
+            return pHead1
+
+        node = sorted_node = ListNode(0)
+
+        while pHead1 and pHead2:
+            if pHead1.val < pHead2.val:
+                node.next = pHead1
+                pHead1 = pHead1.next
+            else:
+                node.next = pHead2
+                pHead2 = pHead2.next
+            node = node.next
+
+        if pHead1 or pHead2:
+            node.next = pHead1 or pHead2
+
+        return sorted_node.next
+
+    def travel_list(self, node):
+        while node is not None:
+            print(node.val, end=" ")
+            node = node.next
+
+
 if __name__ == "__main__":
     node_1 = ListNode(0)
     node_1.next = ListNode(4)
@@ -50,20 +79,7 @@ if __name__ == "__main__":
     node_2.next = ListNode(3)
     node_2.next.next = ListNode(12)
     solu_1 = Solution()
-    print(solu_1.travel_list(solu_1.Merge(node_1, node_2)))
-
-    l3 = l3_1 = ListNode(0)
-    l3_1.next = ListNode(1)
-    l3_1 = l3_1.next
-    l3_1.next = ListNode(2)
-    l4 = l4_1 = ListNode(2)
-    l4_1.next = ListNode(3)
-    l4_1 = l4_1.next
-    l4_1.next = ListNode(4)
-    print(l3_1)
-    print(l3)
-    print(l4_1)
-    print(l4)
-
-    # print(Solution2().mergeTwoLists(l3, l4))
+    # print(solu_1.travel_list(solu_1.Merge(node_1, node_2)))
+    solu_2 = Solution2()
+    print(solu_2.travel_list(solu_2.Merge(node_1, node_2)))
 
