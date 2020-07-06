@@ -7,8 +7,6 @@
 题目描述：
 输入一个链表，输出该链表中倒数第k个结点。
 
-时间复杂度： O(n)
-空间复杂度： O(n)
 """
 
 
@@ -19,6 +17,8 @@ class ListNode:
 
 
 class Solution:
+    # 时间复杂度： O(n)
+    # 空间复杂度： O(n)
     def FindKthToTail(self, head, k):
         # write code here
         res = []
@@ -39,6 +39,8 @@ class Solution:
 
 
 class Solution2:
+    # 时间复杂度： O(n)
+    # 空间复杂度： O(1)
     def FindKthToTail(self, head, k):
         # write code here
         if k < 0 or head is None:

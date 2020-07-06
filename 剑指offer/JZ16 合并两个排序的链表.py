@@ -12,8 +12,58 @@
 """
 
 
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
 class Solution:
     # 返回合并后列表
     def Merge(self, pHead1, pHead2):
         # write code here
-        pass
+        if pHead1 is None:
+            return pHead2
+        if pHead2 is None:
+            return pHead1
+
+        if pHead1.val < pHead2.val:
+            sorted_list = pHead1
+            sorted_list.next = self.Merge(pHead1.next, pHead2)
+        else:
+            sorted_list = pHead2
+            sorted_list.next = self.Merge(pHead2.next, pHead1)
+
+        return sorted_list
+
+    def travel_list(self, node):
+        while node is not None:
+            print(node.val, end=" ")
+            node = node.next
+
+
+if __name__ == "__main__":
+    node_1 = ListNode(0)
+    node_1.next = ListNode(4)
+    node_1.next.next = ListNode(10)
+    node_2 = ListNode(2)
+    node_2.next = ListNode(3)
+    node_2.next.next = ListNode(12)
+    solu_1 = Solution()
+    print(solu_1.travel_list(solu_1.Merge(node_1, node_2)))
+
+    l3 = l3_1 = ListNode(0)
+    l3_1.next = ListNode(1)
+    l3_1 = l3_1.next
+    l3_1.next = ListNode(2)
+    l4 = l4_1 = ListNode(2)
+    l4_1.next = ListNode(3)
+    l4_1 = l4_1.next
+    l4_1.next = ListNode(4)
+    print(l3_1)
+    print(l3)
+    print(l4_1)
+    print(l4)
+
+    # print(Solution2().mergeTwoLists(l3, l4))
+
