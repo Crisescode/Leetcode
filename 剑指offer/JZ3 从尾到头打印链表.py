@@ -12,8 +12,38 @@
 """
 
 
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
 class Solution:
     # 返回从尾部到头部的列表值序列，例如[1,2,3]
     def printListFromTailToHead(self, listNode):
         # write code here
-        pass
+        res = []
+        while listNode:
+            res.insert(0, listNode.val)
+            listNode = listNode.next
+
+        return res
+
+    def travel_listNode(self, listNode):
+        while listNode:
+            print(listNode.val, end=" ")
+            listNode = listNode.next
+
+
+if __name__ == "__main__":
+    curr = head = ListNode(0)
+    head.next = ListNode(1)
+    head = head.next
+    head.next = ListNode(2)
+    head = head.next
+    head.next = ListNode(3)
+    head = head.next
+    head.next = ListNode(4)
+
+    print(Solution().travel_listNode(curr))
+    print(Solution().printListFromTailToHead(curr))
