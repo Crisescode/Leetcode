@@ -5,10 +5,10 @@
 
 """
 题目描述：
-输入一个链表，反转链表后，输出新链表的表头。
+输入一个链表，输出该链表中倒数第k个结点。
 
 时间复杂度： O(n)
-空间复杂度： O(1)
+空间复杂度： O(n)
 """
 
 
@@ -19,20 +19,29 @@ class ListNode:
 
 
 class Solution:
-    # 返回ListNode
-    def ReverseList(self, pHead):
+    def FindKthToTail(self, head, k):
         # write code here
-        if not pHead or pHead.next is None:
-            return pHead
+        count = 0
+        curr, prev = head, None
 
-        curr, prev = pHead, None
         while curr:
             tmp = curr.next
             curr.next = prev
             prev = curr
             curr = tmp
 
-        return prev
+        while prev:
+            count += 1
+            if count == k:
+                prev = prev.next
+                return prev.val
+
+        return None
+
+    def travel_listNode(self, listNode):
+        while listNode:
+            print(listNode.val, end=" ")
+            listNode = listNode.next
 
 
 if __name__ == "__main__":
@@ -43,8 +52,7 @@ if __name__ == "__main__":
     head = head.next
     head.next = ListNode(3)
     head = head.next
-    # print(head)
-    print(curr)
+    head.next = ListNode(4) 
 
-    res = Solution().ReverseList(curr)
-    print(res)
+    print(Solution().travel_listNode(curr))
+    print(Solution().FindKthToTail(curr, 2))
