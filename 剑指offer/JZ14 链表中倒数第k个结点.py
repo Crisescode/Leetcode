@@ -21,27 +21,27 @@ class ListNode:
 class Solution:
     def FindKthToTail(self, head, k):
         # write code here
-        count = 0
-        curr, prev = head, None
+        res = []
 
-        while curr:
-            tmp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = tmp
+        while head is not None:
+            res.insert(0, head.val)
+            head = head.next
 
-        while prev:
-            count += 1
-            if count == k:
-                prev = prev.next
-                return prev.val
+        if len(res) < k or k < 1:
+            return
 
-        return None
+        return res[k-1]
 
     def travel_listNode(self, listNode):
         while listNode:
             print(listNode.val, end=" ")
             listNode = listNode.next
+
+
+class Solution2:
+    def FindKthToTail(self, head, k):
+        # write code here
+        pass
 
 
 if __name__ == "__main__":
@@ -55,4 +55,5 @@ if __name__ == "__main__":
     head.next = ListNode(4) 
 
     print(Solution().travel_listNode(curr))
-    print(Solution().FindKthToTail(curr, 2))
+    print(Solution().FindKthToTail(curr, 5))
+    print(Solution2().FindKthToTail(curr, 5))
