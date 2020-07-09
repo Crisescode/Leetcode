@@ -30,7 +30,7 @@ class Solution:
             sorted_list.next = self.Merge(pHead1.next, pHead2)
         else:
             sorted_list = pHead2
-            sorted_list.next = self.Merge(pHead2.next, pHead1)
+            sorted_list.next = self.Merge(pHead1, pHead2.next)
 
         return sorted_list
 
@@ -79,7 +79,7 @@ if __name__ == "__main__":
     node_2.next = ListNode(3)
     node_2.next.next = ListNode(12)
     solu_1 = Solution()
-    # print(solu_1.travel_list(solu_1.Merge(node_1, node_2)))
+    print(solu_1.travel_list(solu_1.Merge(node_1, node_2)))
     solu_2 = Solution2()
-    print(solu_2.travel_list(solu_2.Merge(node_1, node_2)))
+    # print(solu_2.travel_list(solu_2.Merge(node_1, node_2)))
 
