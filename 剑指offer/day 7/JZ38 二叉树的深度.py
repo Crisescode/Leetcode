@@ -39,7 +39,7 @@ class Solution2:
         q = []
         depth = 0
         q.append(pRoot)
-        while len(q):  # 队列为空时说明没有下一层
+        while q:  # 队列为空时说明没有下一层
             length = len(q)
             for i in range(length):  # 遍历层的每个节点看是否有子节点有则加入
                 current = q.pop(0)  # current为当前遍历到的层中节点，取出，注意pop(-1)为默认，这里要pop(0),取出第一个，先入先出
