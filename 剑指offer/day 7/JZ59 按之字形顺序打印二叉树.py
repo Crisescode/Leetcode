@@ -22,4 +22,8 @@ class Solution:
         # write code here
         q = []
         while len(q):
+            pass
 
+
+if __name__ == "__main__":
+    pass
