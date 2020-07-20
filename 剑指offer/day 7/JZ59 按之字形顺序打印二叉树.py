@@ -21,31 +21,32 @@ class Solution:
     def Print(self, pRoot):
         # write code here
         if pRoot is None:
-            return 0
-        q = []
-        res = []
+            return []
+
         depth = 0
-        q.append(pRoot)
-        while q:  # 队列为空时说明没有下一层
-            length = len(q)
-            for i in range(length):  # 遍历层的每个节点看是否有子节点有则加入
-                current = q.pop(0)  # current为当前遍历到的层中节点，取出，注意pop(-1)为默认，这里要pop(0),取出第一个，先入先出
-                if depth % 2 == 0:
-                    if current.left:
-                        q.append(current.left)
-                        res.append(current.left.val)
-                    if current.right:
-                        q.append(current.right)
-                        res.append(current.right.val)
-                else:
-                    if current.left:
-                        q.append(current.left)
-                        res.insert(0, current.left.val)
-                    if current.right:
-                        q.append(current.right)
-                        res.insert(0, current.right.val)
+        node_queue = [pRoot]
+        res = []
+
+        while node_queue:
+            val = []
+            length = len(node_queue)
+            for i in range(length):
+                current = node_queue.pop(0)
+                val.append(current.val)
+
+                if current.left:
+                    node_queue.append(current.left)
+
+                if current.right:
+                    node_queue.append(current.right)
+
+            if depth % 2 == 0:
+                res.append(val)
+            else:
+                res.append(list(reversed(val)))
 
             depth += 1
+
         return res
 
 
