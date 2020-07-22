@@ -22,11 +22,11 @@ class Solution:
         # write code here
         raw_tree = []
         mirror_tree = []
-        # print(self.pre_travel(raw_tree, pRoot))
+        print(self.pre_travel(raw_tree, pRoot))
         root = self.mirror_tree(pRoot)
-        # print(self.pre_travel(mirror_tree, root))
+        print(self.pre_travel(mirror_tree, root))
 
-        return raw_tree == mirror_tree
+        return self.pre_travel(raw_tree, pRoot) == self.pre_travel(mirror_tree, root)
 
     def mirror_tree(self, root):
         if not root:
@@ -55,10 +55,10 @@ class Solution:
 if __name__ == "__main__":
     root = TreeNode(8)
     root.left = TreeNode(6)
-    root.right = TreeNode(6)
+    root.right = TreeNode(9)
     root.left.left = TreeNode(5)
-    root.left.right = TreeNode(11)
-    root.right.left = TreeNode(11)
+    root.left.right = TreeNode(7)
+    root.right.left = TreeNode(7)
     root.right.right = TreeNode(5)
 
     print(Solution().isSymmetrical(root))
