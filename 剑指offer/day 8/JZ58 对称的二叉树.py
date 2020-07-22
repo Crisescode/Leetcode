@@ -20,4 +20,45 @@ class TreeNode:
 class Solution:
     def isSymmetrical(self, pRoot):
         # write code here
-        pass
+        raw_tree = []
+        mirror_tree = []
+        print(self.pre_travel(raw_tree, pRoot))
+        root = self.mirror_tree(pRoot)
+        print(self.pre_travel(mirror_tree, root))
+
+        return self.pre_travel(raw_tree, pRoot) == self.pre_travel(mirror_tree, root)
+
+    def mirror_tree(self, root):
+        if not root:
+            return None
+
+        node = root.left
+        root.left = root.right
+        root.right = node
+
+        self.mirror_tree(root.left)
+        self.mirror_tree(root.right)
+
+        return root
+
+    def pre_travel(self, val, root):
+        if root is None:
+            return
+
+        val.append(root.val)
+        self.pre_travel(val, root.left)
+        self.pre_travel(val, root.right)
+
+        return val
+
+
+if __name__ == "__main__":
+    root = TreeNode(8)
+    root.left = TreeNode(6)
+    root.right = TreeNode(9)
+    root.left.left = TreeNode(5)
+    root.left.right = TreeNode(7)
+    root.right.left = TreeNode(7)
+    root.right.right = TreeNode(5)
+
+    print(Solution().isSymmetrical(root))
