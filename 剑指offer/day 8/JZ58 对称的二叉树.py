@@ -52,6 +52,12 @@ class Solution:
         return val
 
 
+class Solution2:
+    def isSymmetrical(self, pRoot):
+        # write code here
+        pass
+
+
 if __name__ == "__main__":
     root = TreeNode(8)
     root.left = TreeNode(6)
