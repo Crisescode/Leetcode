@@ -14,7 +14,16 @@ class Solution:
     # 返回[a,b] 其中ab是出现一次的两个数字
     def FindNumsAppearOnce(self, array):
         # write code here
-        pass
+        if array is None:
+            return
+
+        res = []
+        stack = {i: 1 for i in set(array)}
+        for num in array:
+            if num in
+
+
+
 
 
 if __name__ == "__main__":
