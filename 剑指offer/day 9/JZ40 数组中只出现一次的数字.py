@@ -17,14 +17,16 @@ class Solution:
         if array is None:
             return
 
-        res = []
-        stack = {i: 1 for i in set(array)}
+        hash_map = {}
         for num in array:
-            if num in
+            if num in hash_map:
+                hash_map[num] += 1
+            else:
+                hash_map[num] = 1
 
-
-
+        res = [num for num in hash_map.keys() if hash_map[num] == 1]
+        return res
 
 
 if __name__ == "__main__":
-    pass
+    print(Solution().FindNumsAppearOnce([2, 3, 1, 5, 1, 3, 6, 11, 6, 0, 11, 5]))
