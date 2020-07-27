@@ -16,7 +16,7 @@ class Solution:
         if tinput is None or k <= 0:
             return
 
-        return self.quick_sort(tinput)[k]
+        return self.quick_sort(tinput)[:k]
 
     def quick_sort(self, array):
         if len(array) <= 1:
@@ -31,4 +31,4 @@ class Solution:
 
 if __name__ == "__main__":
     array = [4, 5, 1, 6, 2, 7, 3, 8]
-    print(Solution().GetLeastNumbers_Solution(array, ))
+    print(Solution().GetLeastNumbers_Solution(array, 4))
