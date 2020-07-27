@@ -13,8 +13,8 @@
 class Solution:
     def GetLeastNumbers_Solution(self, tinput, k):
         # write code here
-        if tinput is None or k <= 0:
-            return
+        if tinput == [] or k <= 0 or k > len(tinput):
+            return []
 
         return self.quick_sort(tinput)[:k]
 
