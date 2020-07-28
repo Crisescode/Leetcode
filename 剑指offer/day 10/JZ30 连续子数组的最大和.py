@@ -16,8 +16,21 @@ HZ偶尔会拿些专业问题来忽悠那些非计算机专业的同学。今天
 class Solution:
     def FindGreatestSumOfSubArray(self, array):
         # write code here
-        pass
+        if len(array) == 0:
+            return 0
+
+        max_num = array[0]
+        continuous_sum = 0
+        for num in array:
+            if continuous_sum > 0:
+                continuous_sum += num
+            else:
+                continuous_sum = num
+            max_num = max(continuous_sum, max_num)
+
+        return max_num
 
 
 if __name__ == "__main__":
-    pass
+    array = [6, -3, -2, 7, -15, 1, 2, 2]
+    print(Solution().FindGreatestSumOfSubArray(array))
