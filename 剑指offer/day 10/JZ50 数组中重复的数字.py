@@ -16,8 +16,22 @@ class Solution:
     # 函数返回True/False
     def duplicate(self, numbers, duplication):
         # write code here
-        pass
+        if len(numbers) == 0:
+            return False, 0
+        stack = []
+        for num in numbers:
+            if num > len(numbers) - 1:
+                return False, 0
+            if num not in stack:
+                stack.append(num)
+            else:
+               duplication.append(num)
+               return True, duplication[0]
+
+        return False
 
 
 if __name__ == "__main__":
-    pass
+    # numbers = [2, 3, 1, 0, 2, 5, 3]
+    numbers = [2, 1, 3, 1, 4]
+    print(Solution().duplicate(numbers, []))
