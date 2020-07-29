@@ -47,9 +47,5 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 | 94 | [Binary Tree Inorder Traversal](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | [Python](./Tree/94.%20binary_tree_inorder_traversal.py) | Medium |
 
 
-# 剑指offer Solutions with Python
-
-|  #  | Title | Solution | Difficulty |
-| --- | ----- | -------- |  ----- |
-| - | [反转链表](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&&tqId=11168&rp=1&ru=/activity/oj&qru=/ta/coding-interviews/question-ranking) | -- | 中等 |
-| - | [打印数组] | 
+# 剑指Offer
+This is a [剑指offer题解]()
