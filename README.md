@@ -48,4 +48,4 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 
 
 # 剑指Offer
-This is a [剑指offer题解]()
+This is a [剑指offer题解](./剑指offer/README.md)
