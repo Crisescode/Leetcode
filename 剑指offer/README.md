@@ -79,7 +79,7 @@ This project records its my ideas for solving 剑指offer with python, ongoing u
 ### Day 11
 |  #  | Title | Solution | Difficulty |
 | --- | ----- | -------- |  ----- |
-| JZ53 | [Merge Two Binary Trees](https://leetcode-cn.com/problems/merge-two-binary-trees/) | [Python](./Tree/617.%20merge_two_binary_trees.py) | Easy |
-| JZ55 | [Invert Binary Tree](https://leetcode-cn.com/problems/invert-binary-tree/) | [Python](./Tree/226.%20invert_binary_tree.py) | Easy |
-| JZ65 | [Binary Tree Inorder Traversal](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | [Python](./Tree/94.%20binary_tree_inorder_traversal.py) | Medium |
+| JZ53 | [表示数值的字符串](https://leetcode-cn.com/problems/merge-two-binary-trees/) | [Python](./Tree/617.%20merge_two_binary_trees.py) | Easy |
+| JZ55 | [链表中环的入口节点](https://leetcode-cn.com/problems/invert-binary-tree/) | [Python](./Tree/226.%20invert_binary_tree.py) | Easy |
+| JZ65 | [矩阵中的路径](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | [Python](./Tree/94.%20binary_tree_inorder_traversal.py) | Medium |
 
