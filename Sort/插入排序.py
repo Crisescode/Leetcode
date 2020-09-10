@@ -16,7 +16,7 @@ from typing import List
 
 class Solution:
     @timer
-    def selection_sort(self, l: List) -> List:
+    def insertion_sort(self, l: List) -> List:
         if len(l) <= 1:
             return l
 
@@ -39,4 +39,4 @@ class Solution:
 
 if __name__ == "__main__":
     need_sort_list = [2, 4, 8, 1, 7, 10, 12, 15, 3]
-    print(Solution().selection_sort(need_sort_list))
+    print(Solution().insertion_sort(need_sort_list))
