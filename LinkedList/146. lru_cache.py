@@ -3,7 +3,7 @@
 # author: Crise
 # date: 12/09/20
 
-# https://leetcode-cn.com/problems/palindrome-linked-list/
+# https://leetcode-cn.com/problems/lru-cache/
 # Design and implement a data structure for Least Recently Used (LRU) cache.
 # It should support the following operations: get and put.
 #
@@ -68,35 +68,36 @@ class LRUCache:
 
         node = self.dict[key]
         self.remove(node)
-        self.append(node)
+        self.insert(node)
 
         return node.val
 
     def put(self, key: int, value: int) -> None:
         if key in self.dict:
-            self.remove(self.dict[key])
+            node = self.dict[key]
+            node.val = value
+            self.remove(node)
+            self.insert(node)
+            return
+
+        if len(self.dict) == self.capacity:
+            node = self.dummy_tail.prev
+            self.remove(node)
+            del self.dict[node.key]
 
         node = ListNode(key, value)
-        self.append(node)
+        self.insert(node)
         self.dict[key] = node
 
-        if len(self.dict) > self.capacity:
-            head = self.dummy_head.next
-            self.remove(head)
-            del self.dict[head.key]
-
     def remove(self, node: ListNode):
-        prev = node.prev
-        next = node.next
-        prev.next = next
-        next.prev = prev
+        node.prev.next, node.next.prev = node.next, node.prev
 
-    def append(self, node: ListNode):
-        tail = self.dummy_tail.prev
-        tail.next = node
-        node.prev = tail
-        self.dummy_tail.prev = node
-        node.next = self.dummy_tail
+    def insert(self, node: ListNode):
+        head = self.dummy_head.next
+        head.prev = node
+        node.next = head
+        self.dummy_head.next = node
+        node.prev = self.dummy_head
 
 
 if __name__ == "__main__":
