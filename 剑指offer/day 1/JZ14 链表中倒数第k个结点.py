@@ -16,6 +16,27 @@ class ListNode:
         self.next = None
 
 
+class ReSolution:
+    def FindKthToTail(self, head, k):
+        if head is None:
+            return
+
+        fast = slow = head
+        for i in range(k):
+            fast = fast.next if fast else None
+
+        if fast is None:
+            return slow.next
+
+        while fast and fast.next:
+            fast = fast.next
+            slow = slow.next
+
+        slow.next = slow.next.next
+
+        return head
+
+
 class Solution:
     # 时间复杂度： O(n)
     # 空间复杂度： O(n)
@@ -27,6 +48,7 @@ class Solution:
             res.insert(0, head.val)
             head = head.next
 
+        print("res:", res)
         if len(res) < k or k < 1:
             return
 
@@ -71,5 +93,6 @@ if __name__ == "__main__":
     head.next = ListNode(4) 
 
     print(Solution().travel_listNode(curr))
-    print(Solution().FindKthToTail(curr, 5))
-    print(Solution2().FindKthToTail(curr, 5))
+    print(Solution().FindKthToTail(curr, 3))
+    print(Solution2().FindKthToTail(curr, 3))
+    print(Solution().travel_listNode(ReSolution().FindKthToTail(curr, 3)))
