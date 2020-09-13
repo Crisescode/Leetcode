@@ -6,7 +6,7 @@
 # You may not modify the values in the list's nodes, only nodes itself may be changed.
 # For example, Given Input: 1->2-3->4, Output will be: 2->1->4->3.
 #
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 from utils.node import ListNode
 
 

@@ -25,7 +25,7 @@ Example:
                       / \    \
                     5    4    7
 """
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 
 
 # Definition for a binary tree node.

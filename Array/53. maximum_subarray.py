@@ -9,7 +9,7 @@
 # If you have figured out the O(n) solution, try coding another solution using the divide
 # and conquer approach, which is more subtle.
 #
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 
 
 class Solution(object):

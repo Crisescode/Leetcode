@@ -17,7 +17,7 @@ Example 2:
     Input: "cbbd"
     Output: "bb
 '''
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 
 
 # 暴力解法：找出长度大于等于2的字串，然后判断其是否为回文子串
