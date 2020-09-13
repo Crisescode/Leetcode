@@ -7,6 +7,7 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 | 169 | [Majority Element](https://leetcode-cn.com/problems/majority-element/) | [Python](./Daily/169.%20majority_element.py) | Easy | Mar 20 |
 | 289 | [Game of Life](https://leetcode-cn.com/problems/game-of-life/) | [Python](./Daily/289.%20game_of_live.py) | Medium | Apr 2 |
 | 460 | [LFU Cache](https://leetcode-cn.com/problems/lfu-cache/) | [Python](./Daily/460.%20LFU_cache.py) | Hard | Apr 5 |
+| 42 | [Trapping Rain Water](https://leetcode-cn.com/problems/trapping-rain-water/) | [Python](./Daily/460.%20LFU_cache.py) | Hard | Sep 12 |
 
 ### [Array](Array)
 |  #  | Title | Solution | Difficulty |
@@ -26,6 +27,8 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 | 21 | [Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | [Python](./LinkedList/21.%20merge_two_sorted_lists.py) | Easy |
 | 206 | [Reverse Linked List](https://leetcode-cn.com/problems/reverse-linked-list/) | [Python](./LinkedList/26.%20reverse_linked_list.py) | Easy |
 | 234 | [Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list/) | [Python](./LinkedList/234.%20palindrome_linked_list.py) | Easy |
+| 146 | [LRU Cache](https://leetcode-cn.com/problems/lru-cache/) | [Python](./LinkedList/234.%20palindrome_linked_list.py) | Medium |
+
 
 ### [Sort](Sort)
 |  #  | Title | Solution | Difficulty |
