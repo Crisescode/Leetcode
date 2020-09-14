@@ -75,10 +75,70 @@ class ReSolution:
         return res
 
 
-# 迭代
+# 迭代方法
 class Solution2:
-    def invertTree(self, root: TreeNode) -> Optional[TreeNode]:
-        pass
+    def preOrderTraversal(self, root: TreeNode) -> List[int]:
+        res = []
+        if root is None:
+            return res
+
+        stack = [] # 添加右节点
+        curr = root
+        while curr or stack:
+            if curr:
+                res.append(curr.val)
+                stack.append(curr.right)
+                curr = curr.left
+            else:
+                curr = stack.pop()
+
+        return res
+
+    def inOrderTraversal(self, root: TreeNode) -> List[int]:
+        res = []
+        if root is None:
+            return res
+
+        stack = [] # 添加根节点
+        curr = root
+        while curr or stack:
+            if curr:
+                stack.append(curr)
+                curr = curr.left
+            else:
+                curr = stack.pop()
+                res.append(curr.val)
+                curr = curr.right
+
+        return res
+
+    def postOrderTraversal(self, root: TreeNode) -> List[int]:
+        res = []
+        if root is None:
+            return res
+
+        stack = [] # 根据左右根 反转 根右左的特性求解
+        curr = root
+        while curr or stack:
+            if curr:
+                res.append(curr.val)
+                stack.append(curr.left)
+                curr = curr.right
+            else:
+                curr = stack.pop()
+
+        return res[::-1]
+
+
+def levelOrderTraversal(root: TreeNode) -> List[List[int]]:
+    level = [root]
+    ret = []
+    if root is None:
+        return []
+    while level:
+        ret.append([i.val for i in level])
+        level = [kid for node in level for kid in (node.left, node.right) if kid]
+    return ret
 
 
 if __name__ == "__main__":
@@ -91,9 +151,15 @@ if __name__ == "__main__":
     tree1.right.right = TreeNode(9)
 
     invert_tree = invertTree(tree1)
-    print("-------------- 递归方法 -----------------")
+    print("----------- 递归方法 ------------")
     print("前序遍历：", ReSolution().preOrderTraversal(invert_tree))
     print("中序遍历：", ReSolution().inOrderTraversal(invert_tree))
     print("后序遍历：", ReSolution().postOrderTraversal(invert_tree))
 
-    print("-------------- 迭代方法 -----------------")
+    print("----------- 迭代方法 -------------")
+    print("前序遍历：", Solution2().preOrderTraversal(invert_tree))
+    print("前序遍历：", Solution2().inOrderTraversal(invert_tree))
+    print("后序遍历：", Solution2().postOrderTraversal(invert_tree))
+
+    print("----------- 层次遍历 -------------")
+    print(levelOrderTraversal(invert_tree))
