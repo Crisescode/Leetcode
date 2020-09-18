@@ -12,16 +12,6 @@
 from Utils.timer_decorater import timer
 
 
-class ReSolution:
-    def lengthOfLongestSubstring(self, string):
-        if len(string) <= 1:
-            return len(string)
-
-        for i in range(len(string)):
-            for j in range(0, i):
-
-
-
 class Solution:
     @timer
     def lengthOfLongestSubstring(self, s: str) -> int:
