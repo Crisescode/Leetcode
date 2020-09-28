@@ -11,7 +11,7 @@
 # If you have figured out the O(n) solution, try coding another solution of
 # which the time complexity is O(n log n).
 #
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 from typing import List
 
 
