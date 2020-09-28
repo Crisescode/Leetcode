@@ -32,6 +32,7 @@ class TreeNode:
 
 
 class Solution:
+    @timer
     def isSymmetric(self, root: TreeNode) -> bool:
         if root is None:
             return True
@@ -53,3 +54,7 @@ class Solution:
             queue.append((left.right, right.left))
 
         return True
+
+
+if __name__ == "__main__":
+    pass
