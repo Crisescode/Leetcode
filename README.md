@@ -48,8 +48,8 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 | 617 | [Merge Two Binary Trees](https://leetcode-cn.com/problems/merge-two-binary-trees/) | [Python](./Tree/617.%20merge_two_binary_trees.py) | Easy |
 | 226 | [Invert Binary Tree](https://leetcode-cn.com/problems/invert-binary-tree/) | [Python](./Tree/226.%20invert_binary_tree.py) | Easy |
 | 94 | [Binary Tree Inorder Traversal](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | [Python](./Tree/94.%20binary_tree_inorder_traversal.py) | Medium |
-| 101 | [Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tree/) | [Python](./Tree/226.%20invert_binary_tree.py) | Easy |
-| 226 | [Invert Binary Tree](https://leetcode-cn.com/problems/invert-binary-tree/) | [Python](./Tree/226.%20invert_binary_tree.py) | Easy |
+| 101 | [Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tree/) | [Python](./Tree/101.%20symmetric_tree.py) | Easy |
+| 104 | [Maximum Depth of Binary Tree](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/submissions/) | [Python](./Tree/104.%20maximum_depth_of_binary_tree.py) | Easy |
 | 226 | [Invert Binary Tree](https://leetcode-cn.com/problems/invert-binary-tree/) | [Python](./Tree/226.%20invert_binary_tree.py) | Easy |
 
 
