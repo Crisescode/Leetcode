@@ -1,3 +1,22 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+# Given a binary tree, find its maximum depth.
+# The maximum depth is the number of nodes along the longest path from the root node down to
+# the farthest leaf node.
+# Note: A leaf is a node with no children.
+#
+"""
+For example, given a binary tree [3, 9, 3, 4, 5, null, null]:
+                 3
+               / \
+             9    3
+           / \
+          4  5
+
+Return its depth = 3.
+"""
 from Utils.timer_decorater import timer
 
 
