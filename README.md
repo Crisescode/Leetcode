@@ -59,7 +59,7 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 | 94 | [Binary Tree Inorder Traversal](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | [Python](./Tree/94.%20binary_tree_inorder_traversal.py) | Medium |
 | 101 | [Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tree/) | [Python](./Tree/101.%20symmetric_tree.py) | Easy |
 | 104 | [Maximum Depth of Binary Tree](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) | [Python](./Tree/104.%20maximum_depth_of_binary_tree.py) | Easy |
-| 543 | [Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | [Python](./Tree/226.%20invert_binary_tree.py) | Easy |
+| 543 | [Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | [Python](./Tree/543.%20diameter_of_binary_tree.py) | Easy |
 
 ### [DP](DP)
 |  #  | Title | Solution | Difficulty |
