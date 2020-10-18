@@ -30,7 +30,7 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 | 234 | [Palindrome Linked List](https://leetcode-cn.com/problems/palindrome-linked-list/) | [Python](./LinkedList/234.%20palindrome_linked_list.py) | Easy |
 | 146 | [LRU Cache](https://leetcode-cn.com/problems/lru-cache/) | [Python](./LinkedList/234.%20palindrome_linked_list.py) | Medium |
 | 2 | [Add Two Numbers](https://leetcode-cn.com/problems/add-two-numbers/) | [Python](./LinkedList/2.%20add_two_numbers.py) | Medium |
-| 21 | [Merge Two Sorted Lists](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | [Python](./LinkedList/21.%20merge_two_sorted_lists.py) | Easy |
+| 19 | [Remove Nth Node From End of List](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | [Python](./LinkedList/19.%20remove_nth_node_from_end_of_list.py) | Medium |
 
 ### [Sort](Sort)
 |  #  | Title | Solution | Difficulty |
