@@ -131,13 +131,13 @@ class Solution2:
 
 
 def levelOrderTraversal(root: TreeNode) -> List[List[int]]:
-    level = [root]
-    ret = []
     if root is None:
         return []
-    while level:
-        ret.append([i.val for i in level])
-        level = [kid for node in level for kid in (node.left, node.right) if kid]
+
+    curr, ret = [root], []
+    while curr:
+        ret.append([i.val for i in curr])
+        curr = [kid for node in curr for kid in (node.left, node.right) if kid]
     return ret
 
 
