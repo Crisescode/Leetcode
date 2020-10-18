@@ -60,6 +60,13 @@ This project records its my ideas for solving leetcode with python, ongoing upda
 | 101 | [Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tree/) | [Python](./Tree/101.%20symmetric_tree.py) | Easy |
 | 104 | [Maximum Depth of Binary Tree](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) | [Python](./Tree/104.%20maximum_depth_of_binary_tree.py) | Easy |
 | 543 | [Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | [Python](./Tree/543.%20diameter_of_binary_tree.py) | Easy |
+| 102 | [Binary Tree Level Order Traversal](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/) | [Python](./Tree/543.%20diameter_of_binary_tree.py) | Medium |
+| 144 | [Binary Tree Preorder Traversal](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/) | [Python](./Tree/144.%20binary_tree_preorder_traversal.py) | Medium |
+| 145 | [Binary Tree Postorder Traversal](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/) | [Python](./Tree/145.%20binary_tree_postorder_traversal.py) | Medium |
+
+| 543 | [Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | [Python](./Tree/543.%20diameter_of_binary_tree.py) | Easy |
+| 543 | [Diameter of Binary Tree](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | [Python](./Tree/543.%20diameter_of_binary_tree.py) | Easy |
+
 
 ### [DP](DP)
 |  #  | Title | Solution | Difficulty |
