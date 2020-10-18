@@ -28,6 +28,62 @@ class TreeNode:
         self.right = None
 
 
+# 迭代1
 class Solution:
     def preorderTraversal(self, root: TreeNode) -> List[int]:
-        pass
+        if root is None:
+            return []
+
+        res, stack = [], [root]
+        while stack:
+            curr = stack.pop()
+            res.append(curr.val)
+
+            if curr.right:
+                stack.append(curr.right)
+            if curr.left:
+                stack.append(curr.left)
+
+        return res
+
+
+# 迭代2
+class Solution2:
+    def preorderTraversal(self, root):
+        if root is None:
+            return []
+
+        res, stack = [], []
+        curr = root
+        while curr or stack:
+            if curr:
+                res.append(curr.val)
+                stack.append(curr.right)
+                curr = curr.left
+            else:
+                curr = stack.pop()
+
+        return res
+
+
+# 递归
+class Solution3:
+    def preorderTraversal(self, root):
+        if root is None:
+            return []
+
+        return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
+
+
+if __name__ == "__main__":
+    tree = TreeNode(1)
+    tree.left = TreeNode(4)
+    tree.right = TreeNode(2)
+    tree.left.left = TreeNode(5)
+    tree.right.left = TreeNode(3)
+    tree.left.right = TreeNode(10)
+    tree.right.right = TreeNode(20)
+
+    print(Solution().preorderTraversal(tree))
+    print(Solution2().preorderTraversal(tree))
+    print(Solution3().preorderTraversal(tree))

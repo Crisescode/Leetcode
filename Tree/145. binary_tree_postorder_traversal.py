@@ -30,4 +30,28 @@ class TreeNode:
 
 class Solution:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
-        pass
+        if root is None:
+            return []
+
+        res, stack = [], [root]
+        while stack:
+            curr = stack.pop()
+            res.append(curr.val)
+            if curr.left:
+                stack.append(curr.left)
+            if curr.right:
+                stack.append(curr.right)
+
+        return res[::-1]
+
+
+if __name__ == "__main__":
+    tree = TreeNode(1)
+    tree.left = TreeNode(4)
+    tree.right = TreeNode(2)
+    tree.left.left = TreeNode(5)
+    tree.right.left = TreeNode(3)
+    tree.left.right = TreeNode(10)
+    tree.right.right = TreeNode(20)
+
+    print(Solution().postorderTraversal(tree))
