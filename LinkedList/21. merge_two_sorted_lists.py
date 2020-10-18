@@ -6,7 +6,7 @@
 # The new list should be made by splicing together the nodes of the first two lists.
 # For example, Given Input: 1->2->4, 1->3->4, Output will be: 1->1->2->3->4->4.
 #
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 from utils.node import ListNode
 
 

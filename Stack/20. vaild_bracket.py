@@ -10,7 +10,7 @@
 
 # For example, Given Input = "()[{}]", output will be True. Given Input = "([})", Output will be False.
 #
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 
 
 class Solution(object):

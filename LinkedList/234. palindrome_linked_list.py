@@ -7,7 +7,7 @@
 # Given Input: 1->2->3->3->2->1, Output will be: True.
 #
 from utils.node import ListNode
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 
 
 class Solution(object):
