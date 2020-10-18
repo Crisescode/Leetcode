@@ -23,6 +23,23 @@ class Solution2:
         return False
 
 
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        if len(nums) <= 1:
+            return
+
+        hash_dict = {}
+        for num in nums:
+            if num in hash_dict:
+                hash_dict[num] += 1
+            else:
+                hash_dict[num] = 1
+
+        for n in hash_dict:
+            if hash_dict[n] == 1:
+                return n
+
+
 if __name__ == "__main__":
     nums, k = [99, 99], 2
     print(Solution2().containsNearbyDuplicate(nums, k))

@@ -49,7 +49,12 @@ class Solution:
 # 迭代
 class Solution2:
     def invertTree(self, root: TreeNode) -> Optional[TreeNode]:
-        pass
+        if root is None:
+            return
+
+        stack, ret = [root], []
+        while stack:
+            cur = stack.pop()
 
 
 if __name__ == "__main__":
