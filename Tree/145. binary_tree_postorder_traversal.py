@@ -1,8 +1,8 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
-# Given the root of a binary tree, return the preorder traversal of its nodes' values.
+# https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
+# Given the root of a binary tree, return the postorder traversal of its nodes' values.
 
 """
 Example:
@@ -14,7 +14,7 @@ Example:
               3
     Input: root = [1, null, 2, 3]
     Output:
-           [1, 2, 3]
+           [3, 2, 1]
 """
 
 from typing import Optional, List
@@ -29,5 +29,5 @@ class TreeNode:
 
 
 class Solution:
-    def preorderTraversal(self, root: TreeNode) -> List[int]:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
         pass
