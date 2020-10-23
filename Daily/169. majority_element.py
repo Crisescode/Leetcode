@@ -8,7 +8,7 @@
 
 # For example, Given Input = [3, 2, 3], output will be 3. Given Input = [2, 2, 1, 2, 1, 1, 2], Output will be 2.
 #
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 
 
 class Solution(object):

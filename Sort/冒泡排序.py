@@ -11,7 +11,7 @@
 空间复杂度： O(1)
 """
 
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 from typing import List
 
 

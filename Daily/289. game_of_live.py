@@ -19,7 +19,7 @@
 # Input: [[0, 1, 0], [0, 0, 1], [1, 1, 1], [0, 0, 0]]
 # output will be: [[0, 0, 0], [1, 0, 1], [0, 1, 1], [0, 1, 0]]
 #
-from utils.timer_decorater import timer
+from Utils.timer_decorater import timer
 
 
 class Solution(object):

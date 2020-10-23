@@ -6,7 +6,7 @@
 # For example, Given Input: 1->2->3->4->5->NULL, Output will be: 5->4->3->2->1->NULL.
 #
 from Utils.timer_decorater import timer
-from utils.node import ListNode
+from Utils.node import ListNode
 
 
 class Solution(object):
