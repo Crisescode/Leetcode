@@ -1,15 +1,6 @@
 # Leetcode Solutions with Python
 This project records its my ideas for solving leetcode with python, ongoing update ...
 
-### [Daily](Daily)
-|  #  | Title | Solution | Difficulty | Date |
-| --- | ----- | -------- |  ----- | ---- |
-| 169 | [Majority Element](https://leetcode-cn.com/problems/majority-element/) | [Python](./Daily/169.%20majority_element.py) | Easy | Mar 20 |
-| 289 | [Game of Life](https://leetcode-cn.com/problems/game-of-life/) | [Python](./Daily/289.%20game_of_live.py) | Medium | Apr 2 |
-| 460 | [LFU Cache](https://leetcode-cn.com/problems/lfu-cache/) | [Python](./Daily/460.%20LFU_cache.py) | Hard | Apr 5 |
-| 42 | [Trapping Rain Water](https://leetcode-cn.com/problems/trapping-rain-water/) | [Python](./Daily/42.%20trapping_rain_water.py) | Hard | Sep 12 |
-| 209 | [Minimum Size Subarray Sum](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | [Python](./Daily/209.%20minimum_size_subarray%20_sum.py) | Medium | Sep 15 |
-
 ### [Array](Array)
 |  #  | Title | Solution | Difficulty |
 | --- | ----- | -------- |  ----- |
