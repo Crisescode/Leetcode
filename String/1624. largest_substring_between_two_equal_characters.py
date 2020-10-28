@@ -35,3 +35,4 @@ class Solution:
 
         char_count = {}
         for c in s:
+            pass
