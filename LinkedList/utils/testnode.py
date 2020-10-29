@@ -1,4 +1,4 @@
-from node import ListNode
+from utils.node import ListNode
 
 head = None
 
