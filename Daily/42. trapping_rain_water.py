@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 # author: Crise
-# date: 13/09/20
+# date: 13/09/2020
 
 # https://leetcode-cn.com/problems/trapping-rain-water/
 # Given n non-negative integers representing an elevation map where the width of
