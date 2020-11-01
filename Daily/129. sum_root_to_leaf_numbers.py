@@ -49,4 +49,18 @@ class TreeNode:
 @timer
 class Solution:
     def sumNumbers(self, root: TreeNode) -> int:
-        pass
+        res = []
+
+        def dfs(node):
+            if not node:
+                return None
+            if not node.left and not node.right:
+                res.append(node.val)
+                return
+            dfs(node.left)
+            dfs(node.right)
+
+        dfs(root)
+
+        return res
+
