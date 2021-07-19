@@ -38,11 +38,11 @@ class Solution:
             return True
 
         import collections
-        queue = collections.deque()
+        queue = []
         queue.append((root, root))
 
         while queue:
-            left, right = queue.popleft()
+            left, right = queue.pop(0)
             if not left and not right:
                 continue
             if not left or not right:
@@ -56,5 +56,22 @@ class Solution:
         return True
 
 
+def test_queue():
+    import collections
+    queue = collections.deque()
+    queue.append(1)
+    queue.append(2)
+    queue.append(3)
+    print(queue)
+    print(queue.popleft())
+    print(queue)
+    print(queue.pop())
+    print(queue)
+
+    m = [2, 3, 4]
+    print(m.pop(0))
+    print(m)
+
+
 if __name__ == "__main__":
-    pass
+    test_queue()
