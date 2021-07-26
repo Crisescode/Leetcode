@@ -6,7 +6,7 @@
 # For example, Given Input: 1->2->3, Output will be: False.
 # Given Input: 1->2->3->3->2->1, Output will be: True.
 #
-from utils.node import ListNode
+from .utils.node import ListNode
 from Utils.timer_decorater import timer
 
 
