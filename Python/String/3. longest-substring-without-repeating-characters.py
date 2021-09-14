@@ -29,8 +29,35 @@ class Solution:
         return res
 
 
+class Solution2:
+    @timer
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if not s:
+            return 0
+
+        left = 0
+        lookup = set()
+        cur_len, max_len = 0, 0
+
+        for idx in range(len(s)):
+            cur_len += 1
+            while s[idx] in lookup:
+                lookup.remove(s[left])
+                left += 1
+                cur_len -= 1
+
+            if cur_len > max_len:
+                max_len = cur_len
+            lookup.add(s[idx])
+
+        return max_len
+
+
 if __name__ == '__main__':
     solu = Solution()
     reslut = solu.lengthOfLongestSubstring('abcabcbb')
-    assert reslut == 3
     print(reslut)
+
+    # solu2 = Solution2()
+    # reslut2 = solu2.lengthOfLongestSubstring('dvdf')
+    # print(reslut2)
