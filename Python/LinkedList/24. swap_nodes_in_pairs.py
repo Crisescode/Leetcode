@@ -7,7 +7,7 @@
 # For example, Given Input: 1->2-3->4, Output will be: 2->1->4->3.
 #
 from Utils.timer_decorater import timer
-from Utils.node import ListNode
+from utils.node import ListNode
 
 
 class Solution:
