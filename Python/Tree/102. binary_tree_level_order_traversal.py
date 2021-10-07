@@ -29,5 +29,37 @@ class TreeNode:
 
 
 class Solution:
-    def levelOrderTraversal(self, root: TreeNode) -> List[int]:
-        pass
+    def levelOrderTraversal(self, root: TreeNode) -> List[List[int]]:
+        results = []
+        if not root:
+            return results
+
+        from collections import deque
+        que = deque([root])
+
+        while que:
+            q_len = len(que)
+            result = []
+            for _ in range(q_len):
+                cur = que.popleft()
+                result.append(cur.val)
+
+                if cur.left:
+                    que.append(cur.left)
+
+                if cur.right:
+                    que.append(cur.right)
+
+            results.append(result)
+
+        return results[::-1]
+
+
+if __name__ == "__main__":
+    tree = TreeNode(3)
+    tree.left = TreeNode(9)
+    tree.right = TreeNode(20)
+    tree.right.left = TreeNode(15)
+    tree.right.right = TreeNode(7)
+
+    print(Solution().levelOrderTraversal(tree))

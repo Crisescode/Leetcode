@@ -28,6 +28,7 @@ class TreeNode:
         self.right = None
 
 
+# 迭代
 class Solution:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         if root is None:
@@ -45,6 +46,23 @@ class Solution:
         return res[::-1]
 
 
+# 递归
+class Solution2:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        result = []
+
+        def traversal(root: TreeNode):
+            if root is None:
+                return
+
+            traversal(root.left)
+            traversal(root.right)
+            result.append(root.val)
+
+        traversal(root)
+        return result
+
+
 if __name__ == "__main__":
     tree = TreeNode(1)
     tree.left = TreeNode(4)
@@ -55,3 +73,4 @@ if __name__ == "__main__":
     tree.right.right = TreeNode(20)
 
     print(Solution().postorderTraversal(tree))
+    print(Solution2().postorderTraversal(tree))

@@ -66,13 +66,30 @@ class Solution2:
         return res
 
 
-# 递归
+# 递归1
 class Solution3:
     def preorderTraversal(self, root):
         if root is None:
             return []
 
         return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
+
+
+# 递归2
+class Solution4:
+    def preorderTraversal(self, root):
+        result = []
+
+        def traversal(root: TreeNode):
+            if root is None:
+                return
+
+            result.append(root.val)
+            traversal(root.left)
+            traversal(root.right)
+
+        traversal(root)
+        return result
 
 
 if __name__ == "__main__":
@@ -87,3 +104,4 @@ if __name__ == "__main__":
     print(Solution().preorderTraversal(tree))
     print(Solution2().preorderTraversal(tree))
     print(Solution3().preorderTraversal(tree))
+    print(Solution4().preorderTraversal(tree))
