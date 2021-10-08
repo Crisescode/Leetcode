@@ -59,6 +59,34 @@ class Solution2:
         return bfs(root)
 
 
+# 使用层次遍历
+class Solution3:
+    def maxDepth(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+
+        from collections import deque
+        queue = deque()
+        queue.append(root)
+        depth = 0
+        results = []
+
+        while queue:
+            depth += 1
+            result = []
+            for _ in range(len(queue)):
+                cur = queue.popleft()
+                result.append(cur.val)
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+            results.append(result)
+
+        print("层次遍历结果：", results)
+        return depth
+
+
 if __name__ == "__main__":
     tree = TreeNode(4)
     tree.left = TreeNode(2)
@@ -70,3 +98,4 @@ if __name__ == "__main__":
 
     print(Solution().maxDepth(tree))
     print(Solution2().maxDepth(tree))
+    print(Solution3().maxDepth(tree))

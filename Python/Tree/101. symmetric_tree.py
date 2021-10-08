@@ -31,18 +31,46 @@ class TreeNode:
         self.right = None
 
 
+# 使用栈迭代法
 class Solution:
     @timer
     def isSymmetric(self, root: TreeNode) -> bool:
         if root is None:
             return True
 
-        import collections
-        queue = []
+        stack = []
+        stack.append((root, root))
+
+        while stack:
+            # 这里使用 pop(0) 左边或者使用 pop() 右边，都是可以的
+            left, right = stack.pop()
+            if not left and not right:
+                continue
+            if not left or not right:
+                return False
+            if left.val != right.val:
+                return False
+
+            stack.append((left.left, right.right))
+            stack.append((left.right, right.left))
+
+        return True
+
+
+# 使用队列迭代法
+class Solution2:
+    @timer
+    def isSymmetric(self, root: TreeNode) -> bool:
+        if root is None:
+            return True
+
+        from collections import deque
+        queue = deque()
         queue.append((root, root))
 
         while queue:
-            left, right = queue.pop(0)
+            # 这里使用 popleft() 左边或者使用 pop() 右边，都是可以的
+            left, right = queue.pop()
             if not left and not right:
                 continue
             if not left or not right:
@@ -54,6 +82,28 @@ class Solution:
             queue.append((left.right, right.left))
 
         return True
+
+
+# 递归法
+class Solution3:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        if not root:
+            return True
+
+        return self.compare(root.left, root.right)
+
+    def compare(self, left, right):
+        if not left and not right:
+            return True
+        if not left or not right:
+            return False
+        if left.val != right.val:
+            return False
+
+        outs = self.compare(left.left, right.right)
+        ins = self.compare(left.right, right.left)
+
+        return outs and ins
 
 
 def test_queue():
@@ -75,3 +125,13 @@ def test_queue():
 
 if __name__ == "__main__":
     test_queue()
+    tree = TreeNode(1)
+    tree.left = TreeNode(2)
+    tree.right = TreeNode(2)
+    tree.left.left = TreeNode(3)
+    tree.left.right = TreeNode(4)
+    tree.right.left = TreeNode(4)
+    tree.right.right = TreeNode(3)
+
+    print(Solution().isSymmetric(tree))
+    print(Solution2().isSymmetric(tree))
