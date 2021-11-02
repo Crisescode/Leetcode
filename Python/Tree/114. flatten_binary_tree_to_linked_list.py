@@ -15,6 +15,8 @@ The flattened tree should look like:
 1 -> 2 -> 3 -> 4 -> 5 -> 6
 """
 
+from typing import List, Union
+
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -24,13 +26,13 @@ class TreeNode:
 
 
 class ListNode:
-    def __init__(self, val):
+    def __init__(self, val=0, next=None):
         self.val = val
-        self.next = None
+        self.next = next
 
 
 class Solution:
-    def flatten(self, root: TreeNode) -> None:
+    def flatten(self, root: TreeNode) -> Union[ListNode, None]:
         """
         Do not return anything, modify root in-place instead.
         """
@@ -38,13 +40,36 @@ class Solution:
             return None
 
         vals, stack = [], [root]
-        if stack is not None:
-            vals.append(root.val)
-            root = root.left
-            stack.append(root.right)
-        else:
-            stack
+        while stack:
+            cur = stack.pop()
+            vals.append(cur.val)
 
+            if cur.right:
+                stack.append(cur.right)
+
+            if cur.left:
+                stack.append(cur.left)
+
+        cur_node = head = ListNode(0)
+        while vals:
+            cur_val = vals.pop(0)
+            cur = ListNode(cur_val)
+            head.next = cur
+            head = head.next
+
+        return cur_node.next
+
+
+def traversal(head: ListNode) -> List[int]:
+    vals = []
+    if head is None:
+        return vals
+
+    while head is not None:
+        vals.append(head.val)
+        head = head.next
+
+    return vals
 
 
 if __name__ == "__main__":
@@ -55,4 +80,4 @@ if __name__ == "__main__":
     tree.left.right = TreeNode(4)
     tree.right.right = TreeNode(6)
 
-    print(Solution().flatten(tree))
+    print(traversal(Solution().flatten(tree)))

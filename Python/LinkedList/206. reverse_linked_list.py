@@ -18,6 +18,7 @@ class Solution(object):
         """
         if not head or head.next is None:
             return head
+
         curr, prev = head, None
         while curr:
             tmp = curr.next
@@ -29,16 +30,9 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    curr = head = ListNode(0)
+    head = ListNode(0)
     head.next = ListNode(1)
-    head = head.next
-    head.next = ListNode(2)
-    head = head.next
-    head.next = ListNode(3)
-    head = head.next
-    # print(head)
-    print(curr)
+    head.next.next = ListNode(2)
+    head.next.next.next = ListNode(3)
 
-    res = Solution().reverseList(curr)
-    print(res)
-
+    print(Solution().reverseList(head))

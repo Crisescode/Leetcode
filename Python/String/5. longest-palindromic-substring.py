@@ -29,7 +29,7 @@ class Solution:
 
         for i in range(len(s) - 1):
             for j in range(i+1, len(s)):
-                if j - i + 1 > max_len and self.__valid_palindromic_str(s, i, j):
+                if j - i + 1 > max_len and self.__valid_palindromic_str2(s, i, j):
                     max_len = j - i + 1
                     res = s[i:j + 1]
         return res
@@ -42,6 +42,12 @@ class Solution:
             right -= 1
 
         return True
+
+    def __valid_palindromic_str2(self, s, left, right):
+        sub_str = s[left:right]
+        print("sub str: ", sub_str)
+        if sub_str == sub_str[::-1]:
+            return True
 
 
 # 中心扩散法：依次遍历字符串中每个字符，然后记录其左右字符，
