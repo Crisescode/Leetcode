@@ -4,10 +4,9 @@
 
 # Definition for singly-linked list.
 class ListNode(object):
-    def __init__(self, x, next_=None):
-        self.val = x
-        self.next = None
-        self.next_ = next_
+    def __init__(self, val: int = None, next: "ListNode" = None):
+        self.val = val
+        self.next = next
 
     def __repr__(self):
         if self:

@@ -20,7 +20,7 @@ Output: [2, 1, 4, 3, 5]
 """
 
 from Utils.timer_decorater import timer
-from utils.node import ListNode
+from utils import ListNode
 
 
 class Solution:

@@ -10,7 +10,7 @@ For example, the following two linked lists begin to intersect at node c1:
 ...
 """
 
-from utils.node import ListNode
+from utils import ListNode
 
 
 class Solution:

@@ -11,7 +11,7 @@ Return true if there is a cycle in the linked list. Otherwise, return false.
 
 """
 
-from utils.node import ListNode
+from utils import ListNode
 
 
 class Solution:
