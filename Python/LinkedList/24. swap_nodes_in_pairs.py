@@ -13,4 +13,30 @@ from utils import ListNode
 class Solution:
     @timer
     def swapPairs(self, head: ListNode) -> ListNode:
-        pass
+        if not head or not head.next:
+            return head
+
+        dummy_head = ListNode()
+        pre = dummy_head
+        p = head
+
+        while p and p.next:
+            q = p.next
+
+            pre.next = q
+            p.next = q.next
+            q.next = p
+
+            pre = p
+            p = p.next
+
+        return dummy_head.next
+
+
+if __name__ == "__main__":
+    head = ListNode(1)
+    head.next = ListNode(2)
+    head.next.next = ListNode(3)
+    head.next.next.next = ListNode(4)
+    head.next.next.next.next = ListNode(5)
+    print(Solution().swapPairs(head))
