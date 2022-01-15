@@ -29,6 +29,19 @@ class Solution(object):
         return prev
 
 
+class S:
+    def reverse_linked_list(self, head: ListNode) -> ListNode:
+        if not head or head.next is None:
+            return head
+
+        curr, prev = head, None
+        while curr:
+            tmp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = tmp
+
+
 if __name__ == "__main__":
     head = ListNode(0)
     head.next = ListNode(1)
