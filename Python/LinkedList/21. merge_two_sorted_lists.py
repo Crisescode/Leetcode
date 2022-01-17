@@ -7,7 +7,7 @@
 # For example, Given Input: 1->2->4, 1->3->4, Output will be: 1->1->2->3->4->4.
 #
 from Utils.timer_decorater import timer
-from utils.node import ListNode
+from utils import ListNode
 
 
 class Solution(object):
@@ -18,18 +18,22 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        if not l1:
-            return l2
-        if not l2:
-            return l1
+        if not l1 or not l2:
+            return l2 or l1
 
-        if l1.val < l2.val:
-            sorted_head = l1
-            sorted_head.next = self.mergeTwoLists(l1.next, l2)
-        else:
-            sorted_head = l2
-            sorted_head.next = self.mergeTwoLists(l2.next, l1)
-        return sorted_head
+        dummy = ListNode(0)
+        p = dummy
+        while l1 and l2:
+            if l1.val < l2.val:
+                p.next = l1
+                l1 = l1.next
+            else:
+                p.next = l2
+                l2 = l2.next
+            p = p.next
+        p.next = l1 or l2
+
+        return dummy.next
 
 
 class Solution2(object):
