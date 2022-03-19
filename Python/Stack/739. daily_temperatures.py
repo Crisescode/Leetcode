@@ -22,6 +22,15 @@ class Solution(object):
         :type T: List[int]
         :rtype: List[int]
         """
+        idx = [0] * len(T)
+        for i in range(len(T)):
+            for j in range(i+1, len(T)):
+                if T[j] > T[i]:
+                    idx[i] = j - i
+                    break
+        return idx
+
+
         counts = [0] * len(T)
         length = len(T)
         for i in range(length):

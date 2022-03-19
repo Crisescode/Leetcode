@@ -52,6 +52,7 @@ class ListNode:
         self.prev = None
 
 
+# 使用双向链表实现 LRU 缓存
 class LRUCache:
 
     def __init__(self, capacity: int):
@@ -98,6 +99,38 @@ class LRUCache:
         node.next = head
         self.dummy_head.next = node
         node.prev = self.dummy_head
+
+
+# 使用栈实现 LRU 缓存
+class LRUCache2:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.stack = list()
+        self.cache = dict()
+
+    def get(self, key: int):
+        if key in self.cache:
+            self.stack.remove(key)
+            self.stack.insert(0, key)
+            return self.cache[key]
+        else:
+            return -1
+
+    def set(self, key: int, value: int):
+        if key in self.cache:
+            self.cache.pop(key)
+            self.cache[key] = value
+            self.stack.remove(key)
+            self.stack.insert(0, key)
+        elif len(self.cache) == self.capacity:
+            need_to_del_key = self.stack.pop()
+            self.cache.pop(need_to_del_key)
+
+            self.stack.insert(0, key)
+            self.cache[key] = value
+        else:
+            self.cache[key] = value
+            self.stack.insert(0, key)
 
 
 if __name__ == "__main__":
