@@ -54,17 +54,32 @@ class Solution:
 # 迭代
 class Solution2:
     def invertTree(self, root: TreeNode) -> Optional[TreeNode]:
-        pass
+        if not root:
+            return None
+
+        queue = [root]
+        while queue:
+            curr = queue.pop(0)
+            curr.left, curr.right = curr.right, curr.left
+            if curr.left:
+                queue.append(curr.left)
+
+            if curr.right:
+                queue.append(curr.right)
+
+        return root
 
 
 if __name__ == "__main__":
-    tree1 = TreeNode(4)
-    tree1.left = TreeNode(2)
-    tree1.right = TreeNode(7)
-    tree1.left.left = TreeNode(1)
-    tree1.left.right = TreeNode(3)
-    tree1.right.left = TreeNode(6)
-    tree1.right.right = TreeNode(9)
+    tree = TreeNode(4)
+    tree.left = TreeNode(2)
+    tree.right = TreeNode(7)
+    tree.left.left = TreeNode(1)
+    tree.left.right = TreeNode(3)
+    tree.right.left = TreeNode(6)
+    tree.right.right = TreeNode(9)
 
-    invert_tree = Solution().invertTree(tree1)
+    invert_tree = Solution().invertTree(tree)
+    invert_tree2 = Solution2().invertTree(tree)
     print(Solution().preOrder(invert_tree))
+    print(Solution().preOrder(invert_tree2))
