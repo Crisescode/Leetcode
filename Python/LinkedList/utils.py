@@ -8,6 +8,6 @@ class ListNode(object):
         self.val = val
         self.next = next
 
-    def __repr__(self):
-        if self:
-            return '{0} -> {1}'.format(self.val, self.next)
+    # def __repr__(self):
+    #     if self:
+    #         return '{0} -> {1}'.format(self.val, self.next)

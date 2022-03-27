@@ -42,10 +42,34 @@ class S:
             curr = tmp
 
 
+class S3:
+    def reverse_linked_list(self, head: ListNode) -> ListNode:
+        if not head or head.next is None:
+            return head
+
+        h = head
+        stack = []
+        while h:
+            stack.append(h)
+            h = h.next
+
+        dummy = ListNode()
+        reverse_node = dummy
+        while stack:
+            node = stack.pop()
+            node.next = None
+            dummy.next = node
+            dummy = dummy.next
+
+        return reverse_node.next
+
+
 if __name__ == "__main__":
-    head = ListNode(0)
-    head.next = ListNode(1)
-    head.next.next = ListNode(2)
-    head.next.next.next = ListNode(3)
+    head = ListNode(1)
+    head.next = ListNode(2)
+    head.next.next = ListNode(3)
+    head.next.next.next = ListNode(4)
+    head.next.next.next.next = ListNode(5)
 
     print(Solution().reverseList(head))
+    # print(S3().reverse_linked_list(head))
