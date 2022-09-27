@@ -41,6 +41,8 @@ class S:
             prev = curr
             curr = tmp
 
+        return prev
+
 
 class S3:
     def reverse_linked_list(self, head: ListNode) -> ListNode:

@@ -39,5 +39,77 @@ class Solution:
         return res
 
 
+class Solution2:
+    def remove_duplicate_nums(self, nums: List[List[int]]) -> List[List[int]]:
+        res = []
+        for item in nums:
+            if item not in res:
+                res.append(item)
+        return res
+
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        if len(nums) < 3:
+            return []
+        nums = sorted(nums)
+
+        print("=== nums", nums)
+
+        result = []
+        for i in range(len(nums)):
+            if nums[i] > 0:
+                return self.remove_duplicate_nums(result) if result else []
+
+            left = i + 1
+            right = len(nums) - 1
+            while right > left:
+                if nums[i] + nums[left] + nums[right] > 0:
+                    right -= 1
+                elif nums[i] + nums[left] + nums[right] < 0:
+                    left += 1
+                else:
+                    result.append([nums[i], nums[left], nums[right]])
+
+                    right -= 1
+                    left += 1
+
+        return self.remove_duplicate_nums(result)
+
+
+class Solution3:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        if len(nums) < 3:
+            return []
+
+        nums = sorted(nums)
+
+        result = []
+        for i in range(len(nums)):
+            if nums[i] > 0:
+                return result
+
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+
+            left = i + 1
+            right = len(nums) - 1
+            while right > left:
+                # print("==== i, left, right", i, left, right, result)
+                if nums[i] + nums[left] + nums[right] > 0:
+                    right -= 1
+                elif nums[i] + nums[left] + nums[right] < 0:
+                    left += 1
+                else:
+                    result.append([nums[i], nums[left], nums[right]])
+                    while right > left and nums[left] == nums[left + 1]: left += 1
+                    while right > left and nums[right] == nums[right - 1]: right -= 1
+
+                    left += 1
+                    right -= 1
+
+        return result
+
+
 if __name__ == "__main__":
-    print(Solution().threeSum([-1, 0, 1, 2, -1, -4]))
+    # print(Solution().threeSum([-1, 0, 1, 2, -1, -4]))
+    # print(Solution2().threeSum([-1, 0, 1, 2, -1, -4]))
+    print(Solution3().threeSum([-2,0,3,-1,4,0,3,4,1,1,1,-3,-5,4,0]))
