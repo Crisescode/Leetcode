@@ -20,6 +20,6 @@ func inorderTraversal(root *TreeNode) []int {
 }
 
 // 迭代法
-func inorderTraversal2(root *TreeNode) []int {
-
-}
+//func inorderTraversal2(root *TreeNode) []int {
+//
+//}

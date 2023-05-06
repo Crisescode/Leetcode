@@ -8,9 +8,9 @@ import "fmt"
 //	Right *TreeNode
 //}
 
-func kthSmallest(root *TreeNode, k int) int {
+func postorderTraversal(root *TreeNode) []int {
 	var (
-		sorted    []int
+		res       []int
 		traversal func(node *TreeNode)
 	)
 
@@ -18,12 +18,14 @@ func kthSmallest(root *TreeNode, k int) int {
 		if node == nil {
 			return
 		}
+
 		traversal(node.Left)
-		sorted = append(sorted, node.Val)
 		traversal(node.Right)
+		res = append(res, node.Val)
 	}
 	traversal(root)
-	return sorted[k-1]
+
+	return res
 }
 
 func main() {
@@ -34,6 +36,6 @@ func main() {
 	root.Left.Right = &TreeNode{Val: 4}
 	root.Right.Left = &TreeNode{Val: 5}
 	root.Right.Right = &TreeNode{Val: 6}
-	res := kthSmallest(root, 3)
+	res := postorderTraversal(root)
 	fmt.Println(res)
 }
