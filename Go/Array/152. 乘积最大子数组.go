@@ -1,14 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func maxProduct(nums []int) int {
 
-	res := 0
+	res := math.MinInt
 	for i := 0; i < len(nums); i++ {
-		for j := i; i < len(nums); i++ {
+		for j := i; j < len(nums); j++ {
 			s := 1
-			for p := i; p < j; p++ {
+			for p := i; p <= j; p++ {
 				s *= nums[p]
 			}
 
@@ -22,5 +25,5 @@ func maxProduct(nums []int) int {
 }
 
 func main() {
-	fmt.Print(maxProduct([]int{2, 3, -2, 4}))
+	fmt.Print(maxProduct([]int{-2, 3, 1, 6, 0, -4, -8}))
 }
