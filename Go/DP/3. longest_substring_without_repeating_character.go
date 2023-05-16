@@ -9,17 +9,13 @@ func lengthOfLongestSubstring(s string) int {
 
 	for right := 0; right < n; right++ {
 		ch := s[right]
-		fmt.Println("---ch", ch)
 
 		window[ch]++
-		fmt.Println("==== window", window)
 		for window[ch] > 1 {
-			fmt.Println("---- ++++")
 			left++
 			window[s[left]]--
 		}
-		res = max(res, right - left)
-		fmt.Println("=== res", res)
+		res = max(res, right-left)
 	}
 	return res
 }
@@ -30,7 +26,6 @@ func lengthOfLongestSubstring(s string) int {
 //	}
 //	return b
 //}
-
 
 func main() {
 	res := lengthOfLongestSubstring("pwwkew")
